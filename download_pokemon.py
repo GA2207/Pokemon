@@ -6,12 +6,12 @@ SAVE_DIR = "assets/sprites/pokemon"
 
 os.makedirs(SAVE_DIR, exist_ok=True)
 
-for i in range(1, 152):  # 1 à 151
+for i in range(152, 252):  # Gen 2
     url = f"{BASE_URL}{i}.png"
     response = requests.get(url)
 
     if response.status_code == 200:
-        with open(f"{SAVE_DIR}/{i}.png", "wb") as f:
+        with open(f"{SAVE_DIR}/{i:03}.png", "wb") as f:
             f.write(response.content)
         print(f"Pokémon {i} téléchargé")
     else:
