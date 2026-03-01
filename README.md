@@ -8,7 +8,7 @@ Jeu Pokemon en Python avec interface graphique Pygame. Combat tour par tour, cap
 |-----|------|---------|
 | Dev 1 | Interface graphique | `main.py`, `gui/` |
 | Dev 2 | Navigation & UI logique | `navigation.py`, `barre_vie.py`, `sprites.py`, `ecran_pokedex.py` |
-| Dev 3 (Guillaume) | Logique metier | `type_chart.py`, `pokemon.py`, `combat.py`, `capture.py`, `pokedex.py`, `inventaire.py`, `experience.py`, `statut.py` |
+| Dev 3 | Logique metier | `type_chart.py`, `pokemon.py`, `combat.py`, `capture.py`, `pokedex.py`, `inventaire.py`, `experience.py`, `statut.py` |
 | Dev 4 | Structure & tests | `config.py`, `utils.py`, `tests/`, `README.md` |
 
 ## Installation
