@@ -142,3 +142,31 @@ class TypeChart:
     def est_type_valide(cls, type_name):
         """Verifie si un type existe dans le tableau."""
         return type_name in cls.TYPES
+
+
+# ─── Constantes de compatibilite Dev 2 ───────────────────────────────────────
+
+TYPE_NAMES = TypeChart.TYPES
+
+TYPE_COLORS = {
+    "Normal":   {"rgb": (168, 168, 120), "hex": "#A8A878"},
+    "Feu":      {"rgb": (240, 128,  48), "hex": "#F08030"},
+    "Eau":      {"rgb": (104, 144, 240), "hex": "#6890F0"},
+    "Plante":   {"rgb": (120, 200,  80), "hex": "#78C850"},
+    "Electrik": {"rgb": (248, 208,  48), "hex": "#F8D030"},
+    "Glace":    {"rgb": (152, 216, 216), "hex": "#98D8D8"},
+    "Combat":   {"rgb": (192,  48,  40), "hex": "#C03028"},
+    "Poison":   {"rgb": (160,  64, 160), "hex": "#A040A0"},
+    "Sol":      {"rgb": (224, 192, 104), "hex": "#E0C068"},
+    "Vol":      {"rgb": (168, 144, 240), "hex": "#A890F0"},
+    "Psy":      {"rgb": (248,  88, 136), "hex": "#F85888"},
+    "Insecte":  {"rgb": (168, 184,  32), "hex": "#A8B820"},
+    "Roche":    {"rgb": (184, 160,  56), "hex": "#B8A038"},
+    "Spectre":  {"rgb": (112,  88, 152), "hex": "#705898"},
+    "Dragon":   {"rgb": (112,  56, 248), "hex": "#7038F8"},
+    "Tenebres": {"rgb": (112,  88,  72), "hex": "#705848"},
+    "Acier":    {"rgb": (184, 184, 208), "hex": "#B8B8D0"},
+    "Fee":      {"rgb": (238, 153, 172), "hex": "#EE99AC"},
+}
+
+TYPE_CHART = TypeChart.CHART

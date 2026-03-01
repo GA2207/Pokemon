@@ -157,6 +157,49 @@ class Pokedex:
         """Remet le Pokedex a zero."""
         self._entries = {}
 
+    # ── Couche de compatibilite Dev 2 ─────────────────────────────────────────
+
+    @property
+    def _pokemons(self):
+        """Retourne une liste de dicts compatible avec le format Dev 2."""
+        result = []
+        for numero, entry in sorted(self._entries.items()):
+            result.append({
+                "numero": str(numero).zfill(3),
+                "nom": entry["nom"],
+                "types": entry["types"],
+                "pv": entry.get("pv", 0),
+                "attaque": entry.get("attaque", 0),
+                "defense": entry.get("defense", 0),
+            })
+        return result
+
+    def ajouter(self, pokemon):
+        """Alias vers enregistrer_capture pour compatibilite Dev 2."""
+        return self.enregistrer_capture(pokemon)
+
+    def rechercher(self, nom):
+        """Recherche un Pokemon par nom (insensible a la casse)."""
+        for numero, entry in self._entries.items():
+            if entry["nom"].lower() == nom.lower():
+                return {
+                    "numero": str(numero).zfill(3),
+                    "nom": entry["nom"],
+                    "types": entry["types"],
+                    "pv": entry.get("pv", 0),
+                    "attaque": entry.get("attaque", 0),
+                    "defense": entry.get("defense", 0),
+                }
+        return None
+
+    def get_nombre(self):
+        """Retourne le compteur sous forme 'X/1025'."""
+        return f"{len(self._entries)}/{self.TOTAL_POKEMON}"
+
+    def get_nombre_int(self):
+        """Retourne le nombre de Pokemon enregistres (entier)."""
+        return len(self._entries)
+
     def __str__(self):
         return self.afficher()
 
